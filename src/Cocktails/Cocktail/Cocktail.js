@@ -2,9 +2,9 @@ import styles from "./Cocktail.module.scss";
 const Cocktail = ({ name, img }) => {
   return (
     <>
-      <div class={styles.Cocktail}>
-        <h1 class={styles.Title}>Your Cocktail Is {name}</h1>
-        <img class={styles.Img} src={img} alt="CockTail" />
+      <div className={styles.Cocktail}>
+        <h1 className={styles.Title}>Your Cocktail Is {name}</h1>
+        <img className={styles.Img} src={img} alt="CockTail" />
       </div>
     </>
   );
