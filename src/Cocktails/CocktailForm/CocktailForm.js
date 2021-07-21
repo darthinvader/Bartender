@@ -1,5 +1,6 @@
 import styles from "./CocktailForm.module.scss";
 import { AddCircle, LocalBar } from "@material-ui/icons";
+import CocktailInput from "./CocktailInput/CocktailInput";
 const CocktailForm = (props) => {
   return (
     <form className={styles.CocktailForm}>
@@ -8,12 +9,7 @@ const CocktailForm = (props) => {
         Enter Ingredients
         <LocalBar />
       </h1>
-      <input
-        type="text"
-        id="Ingredient1"
-        name="Ingredient2"
-        placeholder="Ingredient"
-      />
+      <CocktailInput />
       <AddCircle className={styles.AddButton} />
       <button className={styles.SubmitButton}>Search Cocktail</button>
     </form>
