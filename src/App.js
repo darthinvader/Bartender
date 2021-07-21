@@ -1,9 +1,9 @@
-import Cocktail from "./Cocktails/CocktailWrapper";
+import CocktailWrapper from "./Cocktails/CocktailWrapper";
 
 function App() {
   return (
     <div>
-      <Cocktail />
+      <CocktailWrapper />
     </div>
   );
 }
