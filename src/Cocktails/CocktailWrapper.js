@@ -8,18 +8,17 @@ const CocktailWrapper = () => {
   const [cocktail, setCocktail] = useState(null);
 
   const createCocktail = async (ingredient) => {
-    cocktailRequest(`filter.php?i=${ingredient}`)
-      .then((response) => {
-        const { drinks } = response.data;
-        const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
-        setCocktail({
-          name: randomDrink.strDrink,
-          img: randomDrink.strDrinkThumb,
-        });
-      })
-      .catch((error) => {
-        console.error(error);
+    try {
+      const response = await cocktailRequest(`filter.php?i=${ingredient}`);
+      const { drinks } = response.data;
+      const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
+      setCocktail({
+        name: randomDrink.strDrink,
+        img: randomDrink.strDrinkThumb,
       });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const CocktailBody = cocktail ? (
