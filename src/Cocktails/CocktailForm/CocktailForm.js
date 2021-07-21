@@ -3,9 +3,23 @@ import { AddCircle, LocalBar } from "@material-ui/icons";
 import CocktailInput from "./CocktailInput/CocktailInput";
 import { useState } from "react";
 
-const CocktailForm = (props) => {
+const CocktailForm = ({ addIngredients }) => {
   const [inputs, setInputs] = useState(1);
   const [showAddIngredient, setShowAddIngredient] = useState(true);
+  const [ingredients, setIngredients] = useState([""]);
+
+  const addIngredient = (index, ingredient) => {
+    if (ingredients.length <= index) {
+      setIngredients([...ingredients, ingredient]);
+    } else {
+      setIngredients([
+        ...ingredients.slice(0, index),
+        ingredient,
+        ...ingredients.slice(index + 1),
+      ]);
+    }
+  };
+  console.log(ingredients);
 
   const addMoreInputs = () => {
     if (inputs < 3) {
@@ -13,6 +27,7 @@ const CocktailForm = (props) => {
         if (inputs === 2) {
           setShowAddIngredient(false);
         }
+        addIngredient(inputs, "");
         return inputs + 1;
       });
     }
@@ -20,7 +35,14 @@ const CocktailForm = (props) => {
 
   const CocktailInputs = [];
   for (let i = 0; i < inputs; i++) {
-    CocktailInputs.push(<CocktailInput />);
+    CocktailInputs.push(
+      <CocktailInput
+        key={i}
+        addIngredient={addIngredient}
+        ingredient={ingredients[i]}
+        index={i}
+      />
+    );
   }
 
   const addCircle = showAddIngredient ? (

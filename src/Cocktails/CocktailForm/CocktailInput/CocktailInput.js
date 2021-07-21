@@ -1,5 +1,5 @@
 import styles from "./CocktailInput.module.scss";
-const CocktailInput = (props) => {
+const CocktailInput = ({ index, addIngredient, ingredient }) => {
   return (
     <input
       className={styles.CocktailInput}
@@ -7,6 +7,8 @@ const CocktailInput = (props) => {
       id="Ingredient1"
       name="Ingredient2"
       placeholder="Ingredient"
+      onChange={(e) => addIngredient(index, e.target.value)}
+      value={ingredient}
     />
   );
 };
