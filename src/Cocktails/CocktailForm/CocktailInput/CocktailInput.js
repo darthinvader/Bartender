@@ -4,8 +4,8 @@ const CocktailInput = ({ index, addIngredient, ingredient }) => {
     <input
       className={styles.CocktailInput}
       type="text"
-      id="Ingredient1"
-      name="Ingredient2"
+      id="Ingredient"
+      name="Ingredient"
       placeholder="Ingredient"
       onChange={(e) => addIngredient(index, e.target.value)}
       value={ingredient}
