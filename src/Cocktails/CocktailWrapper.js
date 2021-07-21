@@ -11,16 +11,20 @@ const CocktailWrapper = () => {
     setIngredients(ingredients);
   };
 
+  const CocktailBody =
+    ingredients.length !== 0 ? (
+      <Cocktail
+        name="Bloody Mary"
+        img="https://jiggr.co.uk/images/cocktails/bloody-mary.jpeg"
+      />
+    ) : (
+      <CocktailForm addIngredients={addIngredients} />
+    );
+
   return (
     <>
       <div className={styles.BigImage}></div>
-      <div className={styles.CocktailWrapper}>
-        {/* <Cocktail
-          name="Bloody Mary"
-          img="https://jiggr.co.uk/images/cocktails/bloody-mary.jpeg"
-        /> */}
-        <CocktailForm addIngredient={addIngredients} />
-      </div>
+      <div className={styles.CocktailWrapper}>{CocktailBody}</div>
     </>
   );
 };

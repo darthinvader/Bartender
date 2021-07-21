@@ -49,6 +49,11 @@ const CocktailForm = ({ addIngredients }) => {
     <AddCircle className={styles.AddButton} onClick={addMoreInputs} />
   ) : null;
 
+  const sendBackIngredients = (e) => {
+    e.preventDefault();
+    addIngredients(ingredients);
+  };
+
   return (
     <form className={styles.CocktailForm}>
       <h1 className={styles.Title}>
@@ -58,7 +63,9 @@ const CocktailForm = ({ addIngredients }) => {
       </h1>
       {CocktailInputs}
       {addCircle}
-      <button className={styles.SubmitButton}>Search Cocktail</button>
+      <button className={styles.SubmitButton} onClick={sendBackIngredients}>
+        Search Cocktail
+      </button>
     </form>
   );
 };
