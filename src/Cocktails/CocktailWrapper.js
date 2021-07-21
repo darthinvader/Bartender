@@ -19,9 +19,12 @@ const CocktailWrapper = () => {
   };
 
   return (
-    <div className={styles.CocktailWrapper}>
-      <CocktailForm />
-    </div>
+    <>
+      <div class={styles.BigImage}></div>
+      <div className={styles.CocktailWrapper}>
+        <CocktailForm />
+      </div>
+    </>
   );
 };
 
