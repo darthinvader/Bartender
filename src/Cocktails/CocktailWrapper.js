@@ -23,10 +23,11 @@ const CocktailWrapper = () => {
     <>
       <div class={styles.BigImage}></div>
       <div className={styles.CocktailWrapper}>
-        <Cocktail
+        {/* <Cocktail
           name="Bloody Mary"
           img="https://jiggr.co.uk/images/cocktails/bloody-mary.jpeg"
-        />
+        /> */}
+        <CocktailForm />
       </div>
     </>
   );
