@@ -3,7 +3,7 @@ const Cocktail = ({ name, img }) => {
   return (
     <>
       <div class={styles.Cocktail}>
-        <h1 class={styles.Title}>Your Cocktail Is A {name}</h1>
+        <h1 class={styles.Title}>Your Cocktail Is {name}</h1>
         <img class={styles.Img} src={img} alt="CockTail" />
       </div>
     </>
