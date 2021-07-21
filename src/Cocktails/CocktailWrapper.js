@@ -2,16 +2,13 @@ import { useState } from "react";
 import Cocktail from "./Cocktail/Cocktail";
 import CocktailForm from "./CocktailForm/CocktailForm";
 import styles from "./CocktailWrapper.module.scss";
-import axios from "axios";
-
-axios.defaults.baseURL = "https://www.thecocktaildb.com/api/json/v1/1";
+import cocktailRequest from "../requests/cocktailAxios";
 
 const CocktailWrapper = () => {
   const [cocktail, setCocktail] = useState(null);
 
   const createCocktail = async (ingredient) => {
-    await axios
-      .get(`filter.php?i=${ingredient}`)
+    cocktailRequest(`filter.php?i=${ingredient}`)
       .then((response) => {
         const { drinks } = response.data;
         const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
