@@ -2,23 +2,23 @@ import { useState } from "react";
 import Cocktail from "./Cocktail/Cocktail";
 import CocktailForm from "./CocktailForm/CocktailForm";
 import styles from "./CocktailWrapper.module.scss";
+import axios from "axios";
 
 const CocktailWrapper = () => {
-  const [ingredients, setIngredients] = useState([]);
   const [cocktail, setCocktail] = useState({});
 
-  const addIngredients = (ingredients) => {
-    setIngredients(ingredients);
+  const createCocktail = async (ingredient) => {
+    const response = await axios.get(
+      `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`
+    );
+    console.log(response);
   };
 
   const CocktailBody =
-    ingredients.length !== 0 ? (
-      <Cocktail
-        name="Bloody Mary"
-        img="https://jiggr.co.uk/images/cocktails/bloody-mary.jpeg"
-      />
+    cocktail.length === 0 ? (
+      <Cocktail name={cocktail.name} img={cocktail.img} />
     ) : (
-      <CocktailForm addIngredients={addIngredients} />
+      <CocktailForm createCocktail={createCocktail} />
     );
 
   return (
