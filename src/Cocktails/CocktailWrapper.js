@@ -1,4 +1,6 @@
 import { useState } from "react";
+import CocktailForm from "./CocktailForm/CocktailForm";
+import styles from "./CocktailWrapper.module.scss";
 
 const CocktailWrapper = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -16,7 +18,11 @@ const CocktailWrapper = () => {
     }
   };
 
-  return null;
+  return (
+    <div className={styles.CocktailWrapper}>
+      <CocktailForm />
+    </div>
+  );
 };
 
 export default CocktailWrapper;
