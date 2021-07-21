@@ -20,8 +20,8 @@
   background-color: rgba(4, 4, 4, 0.85);
 
   .AddButton {
-    margin: 10px;
-    padding: 10px;
+    margin: 1rem;
+    padding: 1rem;
     cursor: pointer;
     color: white;
     font-size: 4rem;
@@ -38,7 +38,7 @@
     border: none;
     cursor: pointer;
     padding: 1rem;
-    margin: 1rem;
+    margin-top: 3rem;
     transition: 0.4s;
 
     &:hover {
