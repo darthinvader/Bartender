@@ -1,14 +1,10 @@
 import styles from "./Cocktail.module.scss";
-const Cocktail = () => {
+const Cocktail = ({ name, img }) => {
   return (
     <>
       <div class={styles.Cocktail}>
-        <h1 class={styles.Title}>Your Cocktail Is A Bloody Mary</h1>
-        <img
-          class={styles.Img}
-          src="https://jiggr.co.uk/images/cocktails/bloody-mary.jpeg"
-          alt="CockTail"
-        />
+        <h1 class={styles.Title}>Your Cocktail Is A {name}</h1>
+        <img class={styles.Img} src={img} alt="CockTail" />
       </div>
     </>
   );
