@@ -17,18 +17,6 @@
 
   background-color: rgba(4, 4, 4, 0.85);
 
-  .AddButton {
-    margin: 1rem;
-    padding: 1rem;
-    cursor: pointer;
-    color: white;
-    font-size: 4rem;
-    transition: 0.4s;
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
-
   .SubmitButton {
     background-color: #cc9c7c;
     font-size: 2rem;
