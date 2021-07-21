@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Cocktail from "./Cocktail/Cocktail";
 import CocktailForm from "./CocktailForm/CocktailForm";
 import styles from "./CocktailWrapper.module.scss";
 
@@ -22,7 +23,7 @@ const CocktailWrapper = () => {
     <>
       <div class={styles.BigImage}></div>
       <div className={styles.CocktailWrapper}>
-        <CocktailForm />
+        <Cocktail />
       </div>
     </>
   );
