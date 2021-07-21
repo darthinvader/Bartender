@@ -1,5 +1,11 @@
+import Cocktail from "./Cocktails/CocktailWrapper";
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Cocktail />
+    </div>
+  );
 }
 
 export default App;
