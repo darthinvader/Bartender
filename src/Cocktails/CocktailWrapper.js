@@ -4,23 +4,25 @@ import CocktailForm from "./CocktailForm/CocktailForm";
 import styles from "./CocktailWrapper.module.scss";
 import axios from "axios";
 
+axios.defaults.baseURL = "https://www.thecocktaildb.com/api/json/v1/1";
+
 const CocktailWrapper = () => {
   const [cocktail, setCocktail] = useState(null);
 
   const createCocktail = async (ingredient) => {
     await axios
-      .get(
-        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`
-      )
-      .then(({ data }) => {
-        const { drinks } = data;
+      .get(`filter.php?i=${ingredient}`)
+      .then((response) => {
+        const { drinks } = response.data;
         const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
         setCocktail({
           name: randomDrink.strDrink,
           img: randomDrink.strDrinkThumb,
         });
       })
-      .catch((error) => {});
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const CocktailBody = cocktail ? (
