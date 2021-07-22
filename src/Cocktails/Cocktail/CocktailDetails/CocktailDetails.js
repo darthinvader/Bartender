@@ -1,4 +1,4 @@
-import styles from "./CocktailDetails.module.scss";
+import "./CocktailDetails.module.scss";
 import { useEffect, useState } from "react";
 import cocktailRequest from "../../../requests/cocktailAxios";
 const determineIngredients = (drink) => {
