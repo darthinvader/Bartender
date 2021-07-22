@@ -44,10 +44,10 @@ const CocktailDetails = ({ name }) => {
   for (let i = 0; i < length; i++) {
     measuredIngredients.push(
       <div key={ingredients[i]}>
-        <p>
+        <li>
           {measurements[i]}
           {ingredients[i]}
-        </p>
+        </li>
       </div>
     );
   }
@@ -55,7 +55,7 @@ const CocktailDetails = ({ name }) => {
   return (
     <div>
       <h2>Ingredients:</h2>
-      {measuredIngredients}
+      <ul>{measuredIngredients}</ul>
       <h2>Instructions:</h2>
       <p>{instructions}</p>
       <h2>Serving Glass:</h2>
