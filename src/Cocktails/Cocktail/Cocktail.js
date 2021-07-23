@@ -1,10 +1,10 @@
 import styles from "./Cocktail.module.scss";
 import CocktailDetails from "./CocktailDetails/CocktailDetails";
-const Cocktail = ({ name, img, returnForm }) => {
+const Cocktail = ({ name, img, back }) => {
   return (
     <>
       <div className={styles.Cocktail}>
-        <p onClick={returnForm} className={styles.ArrowBack}>
+        <p onClick={back} className={styles.ArrowBack}>
           {"<"}
         </p>
 
