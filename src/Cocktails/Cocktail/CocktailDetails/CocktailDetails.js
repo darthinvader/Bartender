@@ -27,7 +27,6 @@ const CocktailDetails = ({ name }) => {
     (async () => {
       try {
         const response = await cocktailRequest(`search.php?s=${name}`);
-        console.log(response);
         const [drink] = response.data.drinks;
         setIngredients(determineIngredients(drink));
         setMeasurements(determineMeasurements(drink));
