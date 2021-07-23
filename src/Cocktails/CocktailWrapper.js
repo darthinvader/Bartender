@@ -6,9 +6,10 @@ import cocktailRequest from "../requests/cocktailAxios";
 
 const CocktailWrapper = () => {
   const [cocktail, setCocktail] = useState(null);
-
+  const [error, setError] = useState(false);
   const createCocktail = async (ingredient) => {
     try {
+      setError(false);
       const response = await cocktailRequest(`filter.php?i=${ingredient}`);
       const { drinks } = response.data;
       const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
@@ -18,13 +19,14 @@ const CocktailWrapper = () => {
       });
     } catch (error) {
       console.error(error);
+      setError(true);
     }
   };
 
   const CocktailBody = cocktail ? (
     <Cocktail name={cocktail.name} img={cocktail.img} />
   ) : (
-    <CocktailForm createCocktail={createCocktail} />
+    <CocktailForm createCocktail={createCocktail} error={error} />
   );
 
   return (
