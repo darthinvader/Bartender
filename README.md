@@ -17,3 +17,12 @@ The search is done by first querying the API for all drinks that contain the inp
 The drink information contains the name of the drink, an image, a description, a list of ingredients and instructions as well as the serving glass.
 
 ![Cocktail Screen](https://i.imgur.com/RP3Z2GJh.png)
+
+---
+
+<h2>Technologies</h2>
+
+- [React](https://facebook.github.io/react/)
+- [Scss](http://sass-lang.com/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [SPA](https://en.wikipedia.org/wiki/Single-page_application)
