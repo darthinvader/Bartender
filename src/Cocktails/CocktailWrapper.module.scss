@@ -7,10 +7,11 @@
   align-items: center;
 }
 .BigImage {
+  background: black;
   /* The image used */
   background-image: url("https://i.imgur.com/w6uho5Cl.jpg");
-  width: 102vw;
-  height: 102vh;
+  width: 105vw;
+  height: 105vh;
   /* Add the blur effect */
   filter: blur(4px);
   background-repeat: no-repeat;
@@ -19,5 +20,5 @@
   background-position: center center;
   position: fixed;
   z-index: -1000;
-  transform: translate(-1vw, -1vh);
+  transform: translate(-1vh, -1vw);
 }
